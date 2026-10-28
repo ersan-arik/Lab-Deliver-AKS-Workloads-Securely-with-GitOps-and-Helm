@@ -1,0 +1,6 @@
+jobs:
+  build:
+    runs-on: [self-hosted, Linux, X64]
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello from the Ubuntu self-hosted runner"
