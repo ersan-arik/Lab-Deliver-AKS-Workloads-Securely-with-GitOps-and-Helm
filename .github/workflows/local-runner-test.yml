@@ -1,0 +1,22 @@
+
+name: Local Runner Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: [self-hosted, Linux, X64, ubuntu-vbox]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify local runner
+        run: |
+          echo "Running inside my local Docker runner"
+          uname -a
+          pwd
